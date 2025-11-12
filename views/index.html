@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的日记本</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="app-logo">📔</div>
+        <h1 class="header-title">我的日记本</h1>
+      </div>
+      <div class="header-right">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="搜索日记..." class="search-input">
+          <span class="search-icon">🔍</span>
+        </div>
+        <button id="logoutBtn" class="btn-icon" title="退出登录">
+          <span>🚪</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <button id="newDiaryBtn" class="btn-primary">
+          <span class="btn-icon">✨</span>
+          <span>新建日记</span>
+        </button>
+        
+        <div class="diary-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="totalCount">0</span>
+            <span class="stat-label">篇日记</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Diary List -->
+      <section class="diary-list-section">
+        <div id="diaryList" class="diary-list">
+          <!-- Diary cards will be inserted here -->
+        </div>
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">📝</div>
+          <p class="empty-text">还没有日记</p>
+          <p class="empty-subtext">点击"新建日记"开始记录</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- New/Edit Diary Modal -->
+  <div id="diaryModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">新建日记</h2>
+        <button class="btn-close" id="closeModal">✕</button>
+      </div>
+      
+      <form id="diaryForm" class="diary-form">
+        <input type="hidden" id="diaryId">
+        
+        <div class="form-group">
+          <input type="text" id="diaryTitle" placeholder="标题" required class="input-title">
+        </div>
+        
+        <div class="form-group">
+          <textarea id="diaryContent" placeholder="今天发生了什么..." required class="input-content"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label class="file-upload-label">
+            <input type="file" id="imageUpload" accept="image/*" multiple class="file-input">
+            <span class="file-upload-text">📷 添加图片</span>
+          </label>
+          <div id="imagePreview" class="image-preview"></div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="cancelBtn">取消</button>
+          <button type="submit" class="btn-primary">保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- View Diary Modal -->
+  <div id="viewModal" class="modal">
+    <div class="modal-content modal-view">
+      <div class="modal-header">
+        <h2 id="viewTitle"></h2>
+        <div class="modal-actions">
+          <button class="btn-icon" id="editDiaryBtn" title="编辑">✏️</button>
+          <button class="btn-icon" id="deleteDiaryBtn" title="删除">🗑️</button>
+          <button class="btn-close" id="closeViewModal">✕</button>
+        </div>
+      </div>
+      
+      <div class="diary-view-content">
+        <div class="diary-meta">
+          <span id="viewDate"></span>
+        </div>
+        <div id="viewContent" class="diary-text"></div>
+        <div id="viewImages" class="diary-images"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
