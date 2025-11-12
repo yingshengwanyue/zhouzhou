@@ -272,12 +272,15 @@ function handleImageUpload(e) {
 
 function renderImagePreview(images, isLocal = false) {
   const preview = document.getElementById('imagePreview');
-  preview.innerHTML = images.map((img, index) => `
-    <div class="image-preview-item">
-      <img src="${img}" class="image-preview-img" alt="Preview">
-      <button type="button" class="image-preview-remove" onclick="removeImage(${index}, ${isLocal})">✕</button>
-    </div>
-  `).join('');
+  preview.innerHTML = images.map((img, index) => {
+    const escapedImg = escapeHtml(img);
+    return `
+      <div class="image-preview-item">
+        <img src="${escapedImg}" class="image-preview-img" alt="Preview">
+        <button type="button" class="image-preview-remove" onclick="removeImage(${index}, ${isLocal})">✕</button>
+      </div>
+    `;
+  }).join('');
 }
 
 function removeImage(index, isLocal) {
