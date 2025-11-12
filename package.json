@@ -1,0 +1,21 @@
+{
+  "name": "zhouzhou",
+  "version": "1.0.0",
+  "description": "一个支持多平台的个人日记本应用，用户可以方便地书写、编辑、查看和管理自己的日常日记",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "multer": "^2.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}

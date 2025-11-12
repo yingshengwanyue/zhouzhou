@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 日记本</title>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="logo-section">
+        <div class="logo-icon">📔</div>
+        <h1 class="app-title">日记本</h1>
+        <p class="app-subtitle">记录每一天的美好时光</p>
+      </div>
+      
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <input type="text" id="username" name="username" placeholder="用户名" required>
+        </div>
+        
+        <div class="form-group">
+          <input type="password" id="password" name="password" placeholder="密码" required>
+        </div>
+        
+        <button type="submit" class="btn-login">登录</button>
+        
+        <div id="errorMessage" class="error-message"></div>
+      </form>
+      
+      <div class="login-footer">
+        <p class="hint-text">默认账户: admin / admin123</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/login.js"></script>
+</body>
+</html>
